@@ -60,15 +60,11 @@ export function CustomSeatModal({
     return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm">
       <div className="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-hidden">
-        {/* Header */}
         <div className="bg-gradient-to-r from-black to-gray-700 text-white p-6">
           <h2 className="text-2xl font-bold mb-2">커스텀 자리 설정</h2>
           <p className="text-gray-300 text-sm">클릭하여 자리를 활성화/비활성화하세요</p>
         </div>
-
-        {/* Content */}
         <div className="p-6 overflow-y-auto max-h-[60vh]">
-          {/* Stats */}
           <div className="flex gap-4 mb-6">
             <div className="flex-1 bg-blue-50 border-2 border-blue-200 rounded-lg p-4">
               <div className="text-sm text-blue-700 mb-1">활성화된 자리</div>
@@ -80,7 +76,6 @@ export function CustomSeatModal({
             </div>
           </div>
 
-          {/* Quick Actions */}
           <div className="flex gap-3 mb-6">
             <Button onClick={selectAll} variant="secondary" className="flex-1 text-sm">
               전체 선택
@@ -90,7 +85,6 @@ export function CustomSeatModal({
             </Button>
           </div>
 
-          {/* Seat Grid */}
           <div className="bg-gray-50 rounded-xl p-6">
             <div className="bg-gray-800 text-white text-center py-3 rounded-lg mb-6 font-semibold text-sm">
               교탁
@@ -130,7 +124,6 @@ export function CustomSeatModal({
           </div>
         </div>
 
-        {/* Footer */}
         <div className="border-t border-gray-200 p-6 bg-gray-50 flex gap-3">
           <Button onClick={onClose} variant="secondary" className="flex-1">
             취소

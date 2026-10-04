@@ -4,9 +4,7 @@ import type { CreateArrangementRequest, CreateArrangementResponse } from '@/type
 export async function POST(request: NextRequest) {
   try {
     const body: CreateArrangementRequest = await request.json();
-    
-    // 여기서 백엔드 로직 구현
-    // 1. 학생 데이터 검증
+
     if (!body.students || body.students.length === 0) {
       return NextResponse.json({
         success: false,
@@ -14,15 +12,11 @@ export async function POST(request: NextRequest) {
       } as CreateArrangementResponse);
     }
 
-    // 2. 데이터베이스에 저장 (구현 필요)
-    // await db.arrangements.create({ ... });
-
-    // 3. 응답 반환
     return NextResponse.json({
       success: true,
       data: {
         id: `${Date.now()}`,
-        seats: [], // 실제 배치 결과
+        seats: [],
         config: { rows: body.rows, cols: body.cols },
         createdAt: new Date().toISOString(),
       },

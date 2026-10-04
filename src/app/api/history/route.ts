@@ -1,15 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import type { SeatArrangement } from '@/types';
 
-// GET: 히스토리 조회
 export async function GET() {
   try {
-    // 데이터베이스에서 히스토리 조회 (구현 필요)
-    // const history = await db.arrangements.findMany();
-    
     return NextResponse.json({
       success: true,
-      history: [], // 실제 데이터
+      history: [],
     });
   } catch (error) {
     return NextResponse.json({
@@ -23,9 +19,6 @@ export async function GET() {
 export async function POST(request: NextRequest) {
   try {
     const arrangement: SeatArrangement = await request.json();
-    
-    // 데이터베이스에 저장 (구현 필요)
-    // await db.arrangements.create({ data: arrangement });
     
     return NextResponse.json({
       success: true,

@@ -15,8 +15,7 @@ export function useSeatRandomizer() {
 
   const studentList = parseStudentInput(students);
   const totalSeats = config.rows * config.cols;
-  
-  // 활성화된 자리 수 계산
+
   const activeSeatsCount = config.customSeats 
     ? config.customSeats.filter(Boolean).length 
     : totalSeats;
@@ -34,7 +33,6 @@ export function useSeatRandomizer() {
     setIsShuffling(true);
     setIsDone(false);
 
-    // 애니메이션 효과
     let count = 0;
     const interval = setInterval(() => {
       const shuffled = shuffleArray(studentList);
@@ -48,8 +46,7 @@ export function useSeatRandomizer() {
             isActive,
           };
         });
-      
-      // 활성화된 자리에만 학생 배치
+
       let studentIdx = 0;
       for (let i = 0; i < tempSeats.length; i++) {
         if (tempSeats[i].isActive && studentIdx < shuffled.length) {
@@ -65,8 +62,7 @@ export function useSeatRandomizer() {
         clearInterval(interval);
         setIsShuffling(false);
         setIsDone(true);
-        
-        // 서버에 저장
+
         const arrangement: SeatArrangement = {
           id: generateId(),
           seats: tempSeats,
@@ -117,7 +113,6 @@ export function useSeatRandomizer() {
   const applyCustomSeats = useCallback((customSeats: boolean[]) => {
     setConfig(prev => ({ ...prev, customSeats }));
     setIsCustomModalOpen(false);
-    // 기존 배치 초기화
     setSeats([]);
     setIsDone(false);
   }, []);

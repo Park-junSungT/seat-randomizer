@@ -32,17 +32,13 @@ export default function SeatRandomizer() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-12 pb-8 border-b-2 border-gray-200">
           <div className="inline-block bg-gradient-to-r from-black to-gray-700 px-8 py-3 rounded-full mb-4 shadow-lg">
             <h1 className="text-3xl font-bold text-white">교실 자리 배치</h1>
           </div>
           <p className="text-gray-600 font-medium">학생 이름을 입력하고 자리를 배치해보세요</p>
         </div>
-
-        {/* Main Content */}
         <div className="grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-8">
-          {/* Left Panel */}
           <div className="space-y-6">
             <StudentInput
               value={students}
@@ -81,12 +77,10 @@ export default function SeatRandomizer() {
             )}
           </div>
 
-          {/* Right Panel */}
           <SeatGrid seats={seats} config={config} isDone={isDone} />
         </div>
       </div>
 
-      {/* Custom Seat Modal */}
       <CustomSeatModal
         isOpen={isCustomModalOpen}
         onClose={closeCustomModal}

@@ -6,7 +6,7 @@ export interface Student {
 export interface Seat {
   position: number;
   student: Student | null;
-  isActive: boolean; // 이 줄이 있어야 합니다!
+  isActive: boolean;
 }
 
 export interface ClassroomConfig {
